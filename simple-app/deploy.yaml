@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: simple-app
+  name: simple-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-app
+  template:
+    metadata:
+      labels:
+        app: simple-app
+    spec:
+      containers:
+      - image: zacharyjamison/simple_app:v1.0.0
+        name: simple-app
+        ports:
+        - containerPort: 8500
+  strategy:
+    type: Recreate
