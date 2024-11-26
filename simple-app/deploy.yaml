@@ -5,7 +5,7 @@ metadata:
     app: simple-app
   name: simple-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: simple-app
